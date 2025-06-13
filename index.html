@@ -38,7 +38,7 @@
     .section-title {
       font-size: 2rem;
       margin: 30px 0 20px;
-      color: #4e6e5d;
+      color: #094b00;
     }
     .grid {
       display: flex;
@@ -75,6 +75,15 @@
       text-align: center;
       margin-top: 20px;
     }
+    body {
+  background: linear-gradient(rgba(170, 243, 182, 0.8), rgba(203, 250, 184, 0.8)), 
+              url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
     .step {
       background: white;
       padding: 15px;
@@ -94,6 +103,15 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+    @keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.wa-button {
+  animation: pulse 1.5s infinite;
+}
+
     .wa-button {
       display: inline-block;
       margin-top: 20px;
@@ -108,12 +126,105 @@
     .wa-button:hover {
       background-color: #128C7E;
     }
+    .testimonial-slider {
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 10px;
+}
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+#countdown {
+  background: #fff3f3;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px 20px;
+  text-align: left;
+  background: #4e6e5d;
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.faq-question:hover {
+  background: #3b5649;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  padding: 0 20px;
+  transition: max-height 0.4s ease;
+}
+.faq-answer p {
+  margin: 15px 0;
+}
+.faq-item.active .faq-answer {
+  max-height: 300px; /* cukup untuk beberapa paragraf */
+}
+
+.slides img {
+  min-width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wa-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: pulse 1.5s infinite;
+}
+.wa-button:hover {
+  background-color: #128C7E;
+}
+
   </style>
 </head>
 <body>
   <header>
     <img src="logo.jpg" alt="Logo Brofi Business">
-    <h1>WELCOME TO <br>@brofi.business</h1>
+    <h1>WELCOME TO <br>@brofi.business
+</h1>
+<h2>👥 Sudah 72.820 member bergabung!
+</h2>
   </header>
 
   <section>
@@ -125,8 +236,8 @@
 Bisa banget dong
 BISNIS INI SANGAT COCOK
 UNTUK  IRT,PELAJAR,KULIAH, KERJA,PENGANGGURAN untuk semua kalangan 
-⚠️ BIG PROMO HANYA UTK 10 ORANG PERTAMA
- ⚠️Penghasilan Minimal 100rb-500 rb/Hari !!!
+⚠ BIG PROMO HANYA UTK 10 ORANG PERTAMA
+ ⚠Penghasilan Minimal 100rb-500 rb/Hari !!!
 Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
 ❌NO MLM
 ❌NO JUDI
@@ -137,6 +248,22 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
        
     </div>
   </section>
+<section>
+  <h2 class="section-title">Promo Join Hari Ini 🔥</h2>
+  <div style="font-size: 1.5rem; margin-bottom: 10px;">
+    <span style="text-decoration: line-through; color: #888;">Rp350.000</span>
+    <span style="color: #d9534f; font-weight: bold;"> Rp50.000 </span>
+  </div>
+  <div style="font-size: 1.2rem; color: #07180b; font-weight: bold;">
+    💥 Diskon 85% untuk 10 orang pertama!
+  </div>
+  <a href="https://wa.me/6281219089054" target="_blank" class="wa-button" style="margin-top: 20px;">🎁 Klaim Sekarang</a>
+</section>
+<section>
+  <h2 class="section-title">🔥 Promo Spesial Berakhir Dalam:</h2>
+  <div id="countdown" style="font-size: 2rem; font-weight: bold; color: #e63946; margin-top: 10px;"></div>
+  <p style="margin-top: 10px; color: #555;">Jangan sampai kelewatan! Harga akan kembali normal ke <del>Rp350.000</del></p>
+</section>
 
   <section>
     <h2 class="section-title">Kata Motivasi</h2>
@@ -146,14 +273,21 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
   </section>
 
   <section>
-    <h2 class="section-title">Testimoni</h2>
-    <div class="grid">
-      <img class="testimonial-img" src="testimoni1.jpg" alt="Testimoni 1">
-      <img class="testimonial-img" src="testimoni2.jpg" alt="Testimoni 2">
-      <img class="testimonial-img" src="testimoni3.jpg" alt="Testimoni 3">
-      <img class="testimonial-img" src="testimoni4.jpg" alt="Testimoni 4">
+  <h2 class="section-title">Testimoni</h2>
+  <div class="testimonial-slider">
+    <div class="slides">
+      <img src="testimoni1.jpg" alt="Testimoni 1">
+      <img src="testimoni2.jpg" alt="Testimoni 2">
+      <img src="testimoni3.jpg" alt="Testimoni 3">
+      <img src="testimoni4.jpg" alt="Testimoni 4">
+      <img src="testimoni5.jpg" alt="Testimoni 5">
+      <img src="testimoni6.jpg" alt="Testimoni 6">
+      <img src="testimoni7.jpg" alt="Testimoni 7">
+      <img src="testimoni8.jpg" alt="Testimoni 8">
     </div>
-  </section>
+  </div>
+</section>
+
 
   <section>
     <h2 class="section-title">Alasan Join</h2>
@@ -194,23 +328,21 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
         <img src="form.png" alt="Form">
         <div>Mengisi form member baru</div>
       </div>
-      <a href="https://wa.me/6281219089054" target="_blank" style="
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 1000;">
-  💬 Chat WA
+      
+</a>
+
 </a>
     </div>
   </section>
-
+<section style="text-align: center; padding: 40px 20px;">
+  <h2 class="section-title">💡 Siap Ubah Hidupmu?</h2>
+  <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px;">
+    Kesempatan tidak datang dua kali. Sekarang waktu terbaik untuk memulai perjalananmu menuju penghasilan tambahan dan kebebasan finansial. Jangan tunda!
+  </p>
+  <a href="https://wa.me/6281219089054" target="_blank" class="wa-button" style="font-size: 1.1rem;">
+    💬 Aku Siap Join Sekarang!
+  </a>
+</section>
 <section>
   <h2 class="section-title">Cek Surat Legalitas</h2>
   <p>Untuk memastikan legalitas usaha dan surat resmi kami, silakan cek melalui link berikut:</p>
@@ -219,8 +351,99 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
   </div>
 </section>
 </script>
+<section>
+  <h2 class="section-title">FAQ - Pertanyaan yang Sering Diajukan</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-question">Apa bisnis ini aman dan legal?</button>
+      <div class="faq-answer">
+        <p>Ya, bisnis ini memiliki legalitas yang bisa kamu cek langsung melalui surat resmi kami.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Berapa biaya untuk join?</button>
+      <div class="faq-answer">
+        <p>Harga normal 350K, tapi saat ini sedang promo hanya <strong>50K saja</strong>! Hemat <strong>85%</strong>!</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apakah ada target penjualan?</button>
+      <div class="faq-answer">
+        <p>Tidak. Tidak ada target, semua dijalankan dengan fleksibel tanpa tekanan.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apakah ini termasuk MLM atau money game?</button>
+      <div class="faq-answer">
+        <p>Tidak. Ini bukan MLM, money game, ataupun judi. Bisnis ini 100% halal dan berbasis produk/jasa nyata.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Bagaimana jika saya pemula?</button>
+      <div class="faq-answer">
+        <p>Tenang, kamu akan mendapatkan <strong>full bimbingan</strong> sampai bisa! Mulai dari nol pun bisa sukses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <footer>
     <p>Payment info & lainnya langsung hubungi admin ke WhatsApp </p>
+    
+
   </footer>
+  <script>
+  let currentIndex = 0;
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    slides.style.transform = translateX(-${currentIndex * 100}%);
+  }, 1100); // ganti gambar setiap 3 detik
+</script>
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      item.classList.toggle('active');
+      faqItems.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 1); // Atur promo berakhir 2 hari dari sekarang
+
+  const countdown = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      countdown.textContent = "Promo telah berakhir!";
+      countdown.style.color = "#999";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    countdown.textContent = `${days} hari ${hrs} jam ${mins} menit ${secs} detik`;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
 </body>
 </html>
