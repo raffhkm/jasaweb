@@ -19,7 +19,7 @@
       background: linear-gradient(to bottom right, #d4eac8, #f6f6f6);
     }
     header, section {
-      padding: 40px 20px;
+      padding: 20px 20px;
       text-align: center;
     }
     header {
@@ -217,36 +217,185 @@
 }
 
   </style>
+<style>
+  .floating-chat {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 12px 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    z-index: 9999;
+    max-width: 250px;
+    animation: fadeInOut 5s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0% {opacity: 0; transform: translateY(20px);}
+    10% {opacity: 1; transform: translateY(0);}
+    90% {opacity: 1;}
+    100% {opacity: 0; transform: translateY(20px);}
+  }
+  .join-section {
+  background-color: #f9f9ff;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+ul.checklist {
+  list-style: none;
+  padding: 0;
+}
+ul.checklist li::before {
+  content: "✔️ ";
+  margin-right: 5px;
+}
+.cta-button .btn {
+  background-color: #3ca028;
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+
+</style>
+
+<div id="chat1" class="floating-chat">💬 “Awalnya ragu, ternyata dibimbing dari nol sampai bisa! -Dinda”</div>
+<div id="chat2" class="floating-chat">💬 “Dapet bahan promosi lengkap tinggal upload doang!” -Rani</div>
+<div id="chat3" class="floating-chat">💬 “Cuma modal HP dan kuota udah bisa bisnis online!” -Adit</div>
+<div id="chat4" class="floating-chat">💬 “Modal kecil, hasil gede. Seriusan ini peluang bagus banget!” -Intan</div>
+<div id="chat5" class="floating-chat">💬 “Dikasih caption, gambar, video. Tinggal upload aja!” -Surya</div>
+<script>
+  const chats = [
+    document.getElementById("chat1"),
+    document.getElementById("chat2"),
+    document.getElementById("chat3"),
+    document.getElementById("chat4"),
+    document.getElementById("chat5")
+  ];
+  let current = 0;
+
+  function showChat() {
+    chats.forEach((chat, index) => {
+      chat.style.display = index === current ? "block" : "none";
+    });
+    current = (current + 1) % chats.length;
+  }
+
+  showChat(); // Tampilkan pertama
+  setInterval(showChat, 3300); // Ganti setiap 6 detik
+</script>
+
 </head>
 <body>
   <header>
     <img src="logo.jpg" alt="Logo Brofi Business">
     <h1>WELCOME TO <br>@brofi.business
 </h1>
-<h2>👥 Sudah 72.820 member bergabung!
-</h2>
-  </header>
+<section style="text-align: center; margin: 40px 0;">
+  <h2 style="font-size: 20px;">Total Member Aktif:</h2>
+  <div id="counter" style="font-size: 36px; font-weight: bold; color: #00b894;">0</div>
+</section>
 
+<script>
+let count = 0;
+let target = 79320; // Jumlah member real/tampilan
+let speed = 2;
+let counter = document.getElementById("counter");
+
+function updateCounter() {
+  if (count < target) {
+    count += Math.floor(Math.random() * 99) + 1;
+    if (count > target) count = target;
+    counter.textContent = count.toLocaleString();
+    setTimeout(updateCounter, speed);
+  }
+}
+updateCounter();
+</script>
+<style>
+.slot-terbatas {
+  position: fixed;
+  top: 25px;
+  left: -60px;
+  background: linear-gradient(45deg, #ff6b6b, #e74c3c);
+  color: white;
+  padding: 10px 40px;
+  font-weight: bold;
+  font-size: 14px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border: 2px solid white;
+  z-index: 9999;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }, 3300);
+  });
+</script>
+
+<div class="slot-terbatas">
+   *Slot Terbatas!
+</div>
+
+  </header>
+<p style="text-align: center; font-family: 'Poppins', sans-serif; margin-top: 24px; font-size: 16px; color: #333;">
+  Sebelum join, silakan cek juga story dan sorotan di akun 
+  <a href="https://www.instagram.com/brofi.business" target="_blank"
+     style="display: inline-block; padding: 6px 14px; margin-left: 8px; background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color: #fff; font-weight: 500; border-radius: 8px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+    IG resmi kami
+  </a>
+</p>
+<div id="chat1" class="floating-chat">💬 “Awalnya ragu, ternyata dibimbing dari nol sampai bisa! -Dinda”</div>
+<div id="chat2" class="floating-chat">💬 “Dapet bahan promosi lengkap tinggal upload doang!” -Rani</div>
+<div id="chat3" class="floating-chat">💬 “Cuma modal HP dan kuota udah bisa bisnis online!” -Adit</div>
+<div id="chat4" class="floating-chat">💬 “Modal kecil, hasil gede. Seriusan ini peluang bagus banget!” -Intan</div>
+<div id="chat5" class="floating-chat">💬 “Dikasih caption, gambar, video. Tinggal upload aja!” -Surya</div>
   <section>
     <h2 class="section-title">Join Dan Raih Keuntungan</h2>
     <div class="grid">
       <div class="card">
-        <h3>LOWONGAN PEKERJAAN!</h3>
-        <p>Mau income 100rb-500rb sebulan kak??
-Bisa banget dong
-BISNIS INI SANGAT COCOK
-UNTUK  IRT,PELAJAR,KULIAH, KERJA,PENGANGGURAN untuk semua kalangan 
-⚠ BIG PROMO HANYA UTK 10 ORANG PERTAMA
- ⚠Penghasilan Minimal 100rb-500 rb/Hari !!!
-Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
-❌NO MLM
-❌NO JUDI
-❌NO MONEY GAMES
-100% halal
-      </div>
+        <h3>Keuntungan Nyata Gabung dibisnis @brofi.business</h3>
+        
+<p>✅Potensi Penghasilan 300rb - 2jt/hari </p>
+✅Kerja lewat HP tanpa keluar rumah
+<p>✅Diajarkan strategi marketing</p>
+✅Tanpa nunjukin muka
+<p>✅Kerja dimanapun dan kapanpun</p>
+✅Tanpa minimum Followers sekalipun followers kamu 0
+<p>✅Full Bimbingan </p>
+✅Bebas konsultasi selamanya
+<p>❌Tidak ada target/tuntutan apapun </p>
+
+<p>❌No Ktp/Atm</p> 
+
+<p>❌Bisnis anti Riba</p> 
+<p>BISNIS HALAL ✅</p>
+SEMUA PENGHASILAN MENJADI MILIK KAMU SEPENUHNYA TANPA BAGI HASIL KEPADA SIAPAPUN💕
+
     
        
     </div>
+  </section>
   </section>
 <section>
   <h2 class="section-title">Promo Join Hari Ini 🔥</h2>
@@ -257,7 +406,6 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
   <div style="font-size: 1.2rem; color: #07180b; font-weight: bold;">
     💥 Diskon 85% untuk 10 orang pertama!
   </div>
-  <a href="https://wa.me/6281219089054" target="_blank" class="wa-button" style="margin-top: 20px;">🎁 Klaim Sekarang</a>
 </section>
 <section>
   <h2 class="section-title">🔥 Promo Spesial Berakhir Dalam:</h2>
@@ -340,7 +488,7 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
     Kesempatan tidak datang dua kali. Sekarang waktu terbaik untuk memulai perjalananmu menuju penghasilan tambahan dan kebebasan finansial. Jangan tunda!
   </p>
   <a href="https://wa.me/6281219089054" target="_blank" class="wa-button" style="font-size: 1.1rem;">
-    💬 Beli Web 50K Klik Ini
+    💬 Fix Join!
   </a>
 </section>
 <section>
@@ -372,6 +520,8 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
         <p>Tidak. Tidak ada target, semua dijalankan dengan fleksibel tanpa tekanan.</p>
       </div>
     </div>
+    
+
     <div class="faq-item">
       <button class="faq-question">Apakah ini termasuk MLM atau money game?</button>
       <div class="faq-answer">
@@ -384,6 +534,22 @@ Kamu mau kan biar ATM gendut 😊 YUK JOIN 😘
         <p>Tenang, kamu akan mendapatkan <strong>full bimbingan</strong> sampai bisa! Mulai dari nol pun bisa sukses.</p>
       </div>
     </div>
+  </div>
+</section>
+<section class="join-section">
+  <h2 class="section-title">🚀 Siap Gabung dan Mulai Bisnis Sekarang?</h2>
+  <p><strong>SESUDAH MEMBACA PENJELASAN BISNIS NYA, KAKAK SIAP JOIN BISNIS & MENYELESAIKAN BIAYA ADMINISTRASI HANYA (1x seumur hidup)?</strong></p>
+  
+  <p>✅ Setelah pembayaran biaya pendaftaran/registrasi member baru, kakak akan langsung diarahkan ke:</p>
+  <ul class="checklist">
+    <li>Grup fasilitas bisnis lengkap</li>
+    <li>Class bimbingan bisnis bersama pembisnis pemula lainnya</li>
+    <li>Full bimbingan & pendampingan sampai paham</li>
+  </ul>
+  
+  <p><strong>JIKA BERMINAT, CHAT ADMIN SEKARANG DENGAN KETIK:</strong></p>
+  <div class="cta-button">
+    <a href="https://wa.me/6281219089054" class="btn">📩 FIX JOIN</a>
   </div>
 </section>
 
